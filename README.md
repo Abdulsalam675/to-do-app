@@ -1,9 +1,9 @@
-# To-Do App ✅  
+### To-Do App ✅  
 
 A simple yet modern **To-Do App** built with **React**.  
 This project helped me practice React fundamentals while building something useful and responsive.  
 
-## 🚀 Features  
+### 🚀 Features  
 - Add new tasks  
 - Mark tasks as completed  
 - Delete individual tasks  
@@ -12,18 +12,17 @@ This project helped me practice React fundamentals while building something usef
 - Fully responsive — works well across devices  
 - Local Storage support (keeps tasks and theme even after reload)  
 
-## 🛠️ Tech Stack  
+### 🛠️ Tech Stack  
 - React  
 - CSS  
 - Local Storage  
 
-## 🌍 Live Demo  
+### 🌍 Live Demo  
 👉 [Try it here](https://to-do-app-rho-one-94.vercel.app/)  
 
-## 📂 GitHub Repository  
+### 📂 GitHub Repository  
 👉 [View Source Code](https://github.com/Abdulsalam675/to-do-app)  
 
-## 🤝 Connect  
 I’m Abdulsalam Umoru👋, passionate about web development and always learning.  
 Happy to connect with like-minded people, share knowledge, and grow together 🚀  
 
