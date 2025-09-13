@@ -1,4 +1,4 @@
-### To-Do App ✅  
+## To-Do App ✅  
 
 A simple yet modern **To-Do App** built with **React**.  
 This project helped me practice React fundamentals while building something useful and responsive.  
