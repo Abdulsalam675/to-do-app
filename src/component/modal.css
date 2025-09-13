@@ -1,0 +1,114 @@
+:root {
+  --modal-bg: #ffffff;
+  --modal-text-color: #212121;
+  --yes-btn-color: #d32f2f;
+  --yes-btn-hover: #c62828;
+  --cancle-btn-color: #9e9e9e;
+  --cancle-btn-hover: #757575;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] {
+  --modal-bg: #1d1d1d;
+  --modal-text-color: #f9f9f9;
+  --yes-btn-color: #ef4c3c;
+  --yes-btn-hover: #d32f2f;
+  --cancle-btn-color: #616161;
+  --cancle-btn-hover: #757575;
+  --modal-overlay: rgba(255, 255, 255, 0.1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: var(--modal-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  min-height: 200px;
+  background-color: var(--modal-bg);
+  color: var(--modal-text-color);
+  border-radius: 8px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  animation: zoomOut 0.2s ease-out;
+}
+
+.btn-wrapper {
+  width: 90%;
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.cancle-btn {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--cancle-btn-color);
+  transition: background-color 0.3s ease-in;
+  outline: none;
+}
+
+.yes-btn {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  outline: none;
+  transition: background-color 0.3s ease-in;
+  cursor: pointer;
+  background-color: var(--yes-btn-color);
+}
+
+.yes-btn:hover {
+  background-color: var(--yes-btn-hover);
+}
+
+.cancle-btn:hover {
+  background-color: var(--cancle-btn-hover);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

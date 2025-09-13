@@ -1,0 +1,246 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background-color 0.25s ease-in-out;
+}
+
+:root {
+  --bg-color: #f5f5f5;
+  --card-color: #ffffff;
+  --text-color: #212121;
+  --toggle-bg-color: #ffffff;
+  --input-bg-color: #ffffff;
+  --input-border-color: #bdbdbd;
+  --add-btn-color: #4caf50;
+  --add-btn-hover: #43a047;
+  --clear-btn-color: #d32f2f;
+  --clear-btn-hover: #c62828;
+  --checkbox-bg-color: #4caf50;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --card-color: #1e1e1e;
+  --text-color: #f9f9f9;
+  --input-bg-color: #1e1e1e;
+  --input-border-color: #424242;
+  --toggle-bg-color: #f5f5f5;
+}
+
+.App {
+  background-color: var(--bg-color);
+}
+
+.fixed-form {
+  width: 100%;
+  max-width: 800px;
+  position: fixed;
+  top: 0;
+  padding: 20px 15px;
+  left: 50%;
+  background-color: var(--bg-color);
+  transform: translateX(-50%);
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.toggle-btn {
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--toggle-bg-color);
+  gap: 3px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.input-wrapper {
+  flex: 1;
+  display: flex;
+}
+
+input[type="text"] {
+  flex: 1;
+  height: 45px;
+  padding: 0 10px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--text-color);
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.add-btn {
+  background-color: var(--add-btn-color);
+  color: #fff;
+  font-weight: bold;
+  height: 45px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+
+.clear-btn {
+  background-color: var(--clear-btn-color);
+  color: #fff;
+  font-weight: bold;
+  height: 45px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+
+.add-btn:hover {
+  background-color: var(--add-btn-hover);
+}
+.clear-btn:hover {
+  background-color: var(--clear-btn-hover);
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 14rem 15px 2.5rem 15px;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--card-color);
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1.2rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.title-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+/*Checkbox*/
+.checkbox-wrapper {
+  display: inline-flex;
+  align-self: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #cccccc;
+  border: 2px solid #cccccc;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: var(--checkbox-bg-color);
+  border-color: var(--checkbox-bg-color);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: -1px;
+  width: 6px;
+  height: 12px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(42deg);
+}
+
+@media (max-width: 500px) {
+  .header {
+    margin: 25px 0;
+  }
+
+  .input-group {
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 20px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  .btn-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .add-btn,
+  .clear-btn {
+    flex: 1;
+    width: 100%;
+  }
+
+  .todo-container {
+    padding-top: 16.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
