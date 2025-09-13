@@ -18,7 +18,7 @@ This project helped me practice React fundamentals while building something usef
 - Local Storage  
 
 ## 🌍 Live Demo  
-👉 (https://to-do-app-rho-one-94.vercel.app/)  
+👉 [Try it here](https://to-do-app-rho-one-94.vercel.app/)  
 
 ## 📂 GitHub Repository  
 👉 [View Source Code](https://github.com/Abdulsalam675/to-do-app)  
